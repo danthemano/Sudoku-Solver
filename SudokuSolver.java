@@ -1,7 +1,7 @@
 class Solution {
     public boolean isValidSudoku(char[][] board) {
         HashSet<String> seen = new HashSet<String>();
-
+        int boxSize = (int)Math.sqrt(board.length)
         //checks each row for a copy of an element
         for(int i = 0; i < board.length; i++){
 
@@ -13,7 +13,7 @@ class Solution {
                 if( board[i][j] != '.'){
                     if(!seen.add(board[i][j] + "row" + i) ||
                             !seen.add(board[i][j] + "col" + j) ||
-                            !seen.add(board[i][j] + "box" + i/3 + "-" + j/3))
+                            !seen.add(board[i][j] + "box" + i/boxSize + "-" + j/boxSize))
                         return false;
                 }
             }
