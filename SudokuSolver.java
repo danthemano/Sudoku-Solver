@@ -3,10 +3,10 @@ class Solution {
         HashSet<String> seen = new HashSet<String>();
 
         //checks each row for a copy of an element
-        for(int i = 0; i < 9; i++){
+        for(int i = 0; i < board.length; i++){
 
             //checks each column for a copy of an element
-            for(int j = 0; j < 9; j++){
+            for(int j = 0; j < board[i].length; j++){
 
                 //adds the element in each row, col, and box with a specific string
                 //to indetify if the element is reapeated in that specific row, col, or box
